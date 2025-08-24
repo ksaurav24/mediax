@@ -1,5 +1,5 @@
 {
-  "name": "mediax",
+  "name": "mediax-sdk",
   "version": "0.1.0",
   "description": "Node.js SDK for ffmpeg media processing (convert, compress, thumbnails, audio, GIF, watermark, frames, etc.)",
   "main": "dist/index.js",
