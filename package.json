@@ -1,18 +1,22 @@
 {
-     "name": "mediax",
-     "version": "1.0.0",
-     "description": "",
-     "main": "index.js",
-     "scripts": {
-          "test": "vitest --run"
-     },
-     "keywords": [],
-     "author": "",
-     "license": "ISC",
-     "packageManager": "pnpm@10.12.3",
-     "devDependencies": {
-          "@types/node": "^20.19.11",
-          "tsx": "^4.20.5",
-          "vitest": "^3.2.4"
-     }
+  "name": "mediax",
+  "version": "1.0.0",
+  "description": "Node.js SDK for ffmpeg jobs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest --run",
+    "prepare": "pnpm build"   
+  },
+  "keywords": ["ffmpeg","media","video","transcoding","sdk"],
+  "author": "<your-name>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.3",
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "tsx": "^4.20.5",
+    "vitest": "^3.2.4",
+    "typescript": "^5.3.0"
+  }
 }
