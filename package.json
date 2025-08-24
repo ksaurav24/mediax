@@ -1,5 +1,5 @@
 {
-  "name": "mediax",
+  "name": "@mediax/root",
   "version": "1.0.0",
   "description": "Node.js SDK for ffmpeg jobs",
   "main": "dist/index.js",
