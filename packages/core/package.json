@@ -1,6 +1,6 @@
 {
   "name": "mediax-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Node.js SDK for ffmpeg media processing (convert, compress, thumbnails, audio, GIF, watermark, frames, etc.)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "test": "vitest run"
   },
   "keywords": ["ffmpeg","media","video","audio","transcoding","sdk","typescript"],
-  "author": "<your-name>",
+  "author": "Saurav Kale <ksaurav4093@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": ">=18"
