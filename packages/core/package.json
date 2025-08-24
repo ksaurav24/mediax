@@ -1,11 +1,24 @@
 {
   "name": "@mediax/core",
   "version": "0.1.0",
+  "description": "Node.js SDK for ffmpeg media processing (convert, compress, thumbnails, audio, GIF, watermark, frames, etc.)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run"
+  },
+  "keywords": ["ffmpeg","media","video","audio","transcoding","sdk","typescript"],
+  "author": "<your-name>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
@@ -16,6 +29,8 @@
     "@types/fluent-ffmpeg": "^2.1.27",
     "@types/node": "^20.0.0",
     "tsx": "^4.20.5",
-    "typescript": "^5.5.0"
-  }
+    "typescript": "^5.5.0",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.12.3"
 }

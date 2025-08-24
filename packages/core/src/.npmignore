@@ -1,0 +1,6 @@
+src/
+tests/
+examples/
+.vscode/
+node_modules/
+*.log
