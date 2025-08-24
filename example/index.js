@@ -1,11 +1,11 @@
-import {MediaX} from 'mediax-sdk'
+import {MediaX} from '../packages/core/dist/index.js';
 
 const media = new MediaX();
 
-const job = media.convert('sample.mp4', 'output.mkv', 'mkv');
+const job = media.convert('sample.mp4', 'output.mkv','matroska');
 
 job.on("progress", (progress) => {
-  console.log(`Progress: ${JSON.stringify(progress)}%`);
+  console.log(`Progress: ${progress.percent}%`);
 });
 
 job.on("done", (output) => {
