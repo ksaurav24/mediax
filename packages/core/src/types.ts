@@ -40,3 +40,68 @@ export type JobEventMap = {
   done: (output?: string) => void;
   state: (state: JobState) => void; // lifecycle
 };
+
+// Enhanced Error Classes for MediaX SDK
+export class MediaXError extends Error {
+  public code: string;
+  public jobType?: JobType;
+
+  constructor(message: string, code: string = 'MEDIAX_ERROR', jobType?: JobType) {
+    super(message);
+    this.name = 'MediaXError';
+    this.code = code;
+    this.jobType = jobType;
+  }
+}
+
+export class MediaXValidationError extends MediaXError {
+  constructor(message: string, jobType?: JobType) {
+    super(message, 'VALIDATION_ERROR', jobType);
+    this.name = 'MediaXValidationError';
+  }
+}
+
+// Additional specialized error class for FFmpeg-specific errors
+export class MediaXFFmpegError extends MediaXError {
+  public exitCode?: number;
+  public stderr?: string;
+
+  constructor(message: string, exitCode?: number, stderr?: string, jobType?: JobType) {
+    super(message, 'FFMPEG_ERROR', jobType);
+    this.name = 'MediaXFFmpegError';
+    this.exitCode = exitCode;
+    this.stderr = stderr;
+  }
+}
+
+// Error code constants for better type safety and consistency
+export const ERROR_CODES = {
+  // Validation errors
+  VALIDATION_ERROR: 'VALIDATION_ERROR',
+  FILE_NOT_FOUND: 'FILE_NOT_FOUND',
+  PERMISSION_DENIED: 'PERMISSION_DENIED',
+  INVALID_PARAMS: 'INVALID_PARAMS',
+  
+  // Pipeline errors
+  PIPELINE_RUNNING: 'PIPELINE_RUNNING',
+  PIPELINE_ABORTED: 'PIPELINE_ABORTED',
+  PIPELINE_ERROR: 'PIPELINE_ERROR',
+  
+  // Job errors
+  JOB_TIMEOUT: 'JOB_TIMEOUT',
+  JOB_FAILED: 'JOB_FAILED',
+  
+  // FFmpeg errors
+  FFMPEG_ERROR: 'FFMPEG_ERROR',
+  FFMPEG_MISSING: 'FFMPEG_MISSING',
+  NO_STREAMS: 'NO_STREAMS',
+  INVALID_MEDIA: 'INVALID_MEDIA',
+  CONVERSION_FAILED: 'CONVERSION_FAILED',
+  CODEC_NOT_SUPPORTED: 'CODEC_NOT_SUPPORTED',
+  
+  // Generic
+  MEDIAX_ERROR: 'MEDIAX_ERROR',
+  UNKNOWN: 'UNKNOWN'
+} as const;
+
+export type ErrorCode = typeof ERROR_CODES[keyof typeof ERROR_CODES];
