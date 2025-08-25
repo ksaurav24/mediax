@@ -1,6 +1,7 @@
 {
   "name": "@mediax/root",
   "version": "1.0.0",
+  "type": "module",
   "description": "Node.js SDK for ffmpeg jobs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +11,7 @@
     "prepare": "pnpm build"   
   },
   "keywords": ["ffmpeg","media","video","transcoding","sdk"],
-  "author": "<your-name>",
+  "author": "Saurav Kale",
   "license": "MIT",
   "packageManager": "pnpm@10.12.3",
   "devDependencies": {

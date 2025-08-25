@@ -265,3 +265,6 @@ export class MediaX {
         };
     }
 }
+
+
+export default MediaX;

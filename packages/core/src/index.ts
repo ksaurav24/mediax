@@ -2,3 +2,4 @@
 export { MediaX } from "./mediax";
 export { Job } from "./job";
 export * from "./types";
+export * from "./pipeline";
