@@ -2,7 +2,7 @@ import { Job } from "./job";
 import { Pipeline } from "./pipeline";
 import { JobOptions, MediaXError, ERROR_CODES, JobType } from "./types";
 
-export class MediaX {
+class MediaX {
     private activeJobs: Set<Job> = new Set();
     private activePipelines: Set<Pipeline> = new Set();
 
@@ -267,4 +267,5 @@ export class MediaX {
 }
 
 
+export { MediaX };
 export default MediaX;
