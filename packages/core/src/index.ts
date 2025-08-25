@@ -3,12 +3,13 @@ import { MediaX } from "./mediax";
 
 import { Job } from "./job";
 
+import { Pipeline } from "./pipeline";
 
 import * as Types from "./types";
 
 import { Queue } from "./queue";
 
-export { MediaX, Job,  Types, Queue };
+export { MediaX, Job, Pipeline, Types, Queue };
 
 // default export
 export default MediaX;
